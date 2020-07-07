@@ -1,0 +1,41 @@
+#navbar {
+  background-color: #0c193a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+  color: rgb(226, 222, 222);
+  width: 100%;
+}
+
+#navbar img {
+  width: 30%;
+  max-width: 200px;
+}
+
+#navbar h5 {
+  margin: 0.5em 0 0 0;
+}
+
+#navbar .font-awesome {
+  display: flex;
+}
+
+#navbar .font-awesome-icon {
+  font-size: 3.5vw;
+  margin: 0.5em 0.5em 0 0.5em;
+}
+
+#navbar .font-awesome-icon:hover {
+  color: #ffbd37;
+}
+
+#navbar a {
+  color: rgb(226, 222, 222);
+}
+
+@media (min-width: 650px) {
+  #navbar .font-awesome-icon {
+    font-size: 1.5em;
+  }
+}

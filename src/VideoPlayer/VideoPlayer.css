@@ -1,0 +1,44 @@
+#videoplayer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 0em;
+}
+
+#videoplayer iframe {
+  width: 90vw;
+  max-width: 600px;
+  max-height: 400px;
+  height: 60vw;
+  border-radius: 1em;
+}
+.kits-left {
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.kits-left h4 {
+  margin: 1em 0 1em;
+  text-align: center;
+}
+@media (min-width: 650px) {
+  #videoplayer {
+    flex-direction: row;
+  }
+
+  .video {
+    width: 50%;
+  }
+  #videoplayer iframe {
+    width: 100%;
+  }
+  .kits-left {
+    width: 40%;
+  }
+  .kits-left button {
+    width: 100%;
+    max-width: 500px;
+  }
+}

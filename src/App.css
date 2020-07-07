@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
+* {
+  margin: 0px;
+  overflow-x: hidden;
+  font-family: Campton;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+@font-face {
+  font-family: "Campton";
+  src: url("./Assets/Campton-LightDEMO.otf");
+}
+@font-face {
+  font-family: "CamptonBold";
+  src: url("./Assets/Campton-BoldDEMO.otf");
+}
+h1 {
+  font-family: CamptonBold;
+  font-size: 12vw;
+}
+h2 {
+  font-family: CamptonBold;
+  font-size: 10vw;
+}
+h3 {
+  font-size: 8vw;
+}
+h4 {
+  font-size: 5vw;
+}
+h5 {
+  font-size: 3vw;
+}
+p {
+  font-size: 4vw;
+}
+
+li {
+  font-size: 4vw;
+}
+
+span {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  background-color: #ffbd37;
+  padding: 0.5em 1em;
+  width: 75vw;
+  max-width: 500px;
+  font-size: 5vw;
+  border-radius: 0.3em;
+  border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button:hover {
+  font-family: CamptonBold;
+  color: white;
+}
+
+b {
+  font-family: CamptonBold;
+  color: #ffbd37;
+}
+
+@media (min-width: 650px) {
+  h1 {
+    font-size: 3.5em;
   }
-  to {
-    transform: rotate(360deg);
+  h2 {
+    font-size: 3em;
+  }
+  h3 {
+    font-size: 2.5em;
+  }
+  h4 {
+    font-size: 2em;
+  }
+  h5 {
+    font-size: 1.5em;
+  }
+  button {
+    font-size: 2em;
+  }
+  p {
+    font-size: 1.5em;
+  }
+  li {
+    font-size: 1.5em;
   }
 }

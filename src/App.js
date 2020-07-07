@@ -1,26 +1,63 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import NavBar from "./NavBar/NavBar";
+import PaymentConfirmation from "./PaymentConfirmation/PaymentConfirmation";
+import "./App.css";
+import { Route } from "react-router-dom";
+import Dashboard from "./Dashboard/Dashboard";
+import Popup from "./Popup/Popup";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  state = {
+    buyers: 2345,
+    reviewNumber: 0,
+    paymentConfirmation: true,
+    blur: false,
+  };
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ blur: true });
+    }, 5000);
+  }
+  render() {
+    const { buyers, reviewNumber, paymentConfirmation } = this.state;
+    return (
+      <div className="app">
+        <NavBar />
+        {this.state.blur && <Popup removeBlur={this.removeBlur} />}
+        <Route
+          exact
+          path={`/`}
+          render={(routerProps) => (
+            <Dashboard
+              {...routerProps}
+              buyers={buyers}
+              reviewNumber={reviewNumber}
+              paymentConfirmation={paymentConfirmation}
+              updateReviewNumber={this.updateReviewNumber}
+              buyProduct={this.buyProduct}
+              blur={this.state.blur}
+            />
+          )}
+        />
+        <Route
+          exact
+          path={`/paymentConfirmation`}
+          render={(routerProps) => <PaymentConfirmation buyers={buyers} />}
+        />
+      </div>
+    );
+  }
+  updateReviewNumber = () => {
+    const { reviewNumber } = this.state;
+    reviewNumber === 5
+      ? this.setState({ reviewNumber: 0 })
+      : this.setState({ reviewNumber: reviewNumber + 1 });
+  };
+  buyProduct = () => {
+    this.setState({ buyers: this.state.buyers + 1 });
+  };
+
+  removeBlur = () => {
+    this.setState({ blur: false });
+  };
 }
-
-export default App;

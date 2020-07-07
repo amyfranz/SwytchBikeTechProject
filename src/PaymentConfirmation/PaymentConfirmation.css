@@ -1,0 +1,48 @@
+#payment-confirmation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#payment-confirmation h2 {
+  color: #ffbd37;
+  margin: 0.5em;
+}
+#payment-confirmation h4 {
+  margin: 0.5em 0.5em 0.5em 0.5em;
+}
+#payment-confirmation img {
+  width: 100%;
+  max-width: 600px;
+}
+#payment-confirmation button {
+  max-width: 400px;
+  padding: 0.2em;
+  margin: 0.5em;
+}
+.sharebutton {
+  margin: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+}
+.footer {
+  background-color: #0c193a;
+  width: 100vw;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(226, 222, 222);
+}
+.footer button {
+  width: 70vw;
+  font-size: medium;
+  max-width: 500px;
+}
+
+.footer input {
+  width: 70vw;
+  max-width: 500px;
+  padding: 0.5em;
+}
